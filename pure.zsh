@@ -176,6 +176,14 @@ prompt_pure_preprompt_render() {
 	)
 
 	PROMPT="${(j..)ps1}"
+	
+	local -a rpreprompt
+	
+	if typeset -f kube_ps1 > dev/null; then
+		rpreprompt+="$(kube_ps1)"
+	fi
+	
+	RPROMPT="${rpreprompt}"
 
 	# Expand the prompt for future comparision.
 	local expanded_prompt
