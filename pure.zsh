@@ -179,7 +179,7 @@ prompt_pure_preprompt_render() {
 	
 	local -a rpreprompt
 	
-	if typeset -f kube_ps1 > dev/null; then
+	if typeset -f kube_ps1 > /dev/null; then
 		rpreprompt+="$(kube_ps1)"
 	fi
 	
